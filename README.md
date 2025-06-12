@@ -9,16 +9,18 @@ Desde hace unos años Python es el lenguaje de programación más utilizado en e
 
 #Temario del curso:
 
-Bienvenida al curso
-Preparación del entorno de aprendizaje
-¿Qué es Python?
-Introducción a Python
-Operadores en Python
-Tipos de datos complejos en Python
-Estructuras de control de flujo en Python
-Python 3 orientado a objetos
-Trabajando con objetos en Python
-Programación modular en Python
-Manejo de excepciones en Python
-Proyecto Final 1 - Videojuego Snake
-Proyecto Final 2 - Filtro de detección de Spam
+# Temario del curso
+
+- Bienvenida al curso
+- Preparación del entorno de aprendizaje
+- ¿Qué es Python?
+- Introducción a Python
+- Operadores en Python
+- Tipos de datos complejos en Python
+- Estructuras de control de flujo en Python
+- Python 3 orientado a objetos
+- Trabajando con objetos en Python
+- Programación modular en Python
+- Manejo de excepciones en Python
+- Proyecto Final 1 - Videojuego Snake
+- Proyecto Final 2 - Filtro de detección de Spam
