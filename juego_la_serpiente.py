@@ -103,6 +103,7 @@ class SnakeGame:
             self.screen.update()
             self.colision_borde()
             self.colision_comida()
+            self.colision_cuerpo()
             time.sleep(self._delay)
             self.mover()
         self.screen.mainloop()
@@ -112,21 +113,13 @@ class SnakeGame:
         bycor = (self._alto // 2) - 10
 
         if self.snake.xcor() > bxcor or self.snake.xcor() < -bxcor or self.snake.ycor() > bycor or self.snake.ycor() < -bycor:
-            time.sleep(1)
-            self.snake.goto(0, 0)
-            self._direccion = None
-            for s in self.shake_cuerpo:
-                s.ht() # oculta el segmento
+            self._reset()
 
-            self.shake_cuerpo.clear()
+    def colision_cuerpo(self):
+        for s in self.shake_cuerpo:
+            if s.distance(self.snake) < 20:
+                self._reset()
 
-            #se reinicia el delay
-            self._delay = 0.1
-            # se reinicia el score
-            if self._score > self._high_score:
-                self._high_score = self._score
-            self._score = 0
-            self._print_score()
 
     def colision_comida(self):
         if self.snake.distance(self.comida) < 20:
@@ -157,6 +150,22 @@ class SnakeGame:
         self.texto.clear()
         self.texto.write('Puntos: {} Record: {}'.format(self._score, self._high_score), align='center', font=('Courier', 24, 'normal'))
 
+    def _reset(self):
+        time.sleep(1)
+        self.snake.goto(0, 0)
+        self._direccion = None
+        for s in self.shake_cuerpo:
+            s.ht()  # oculta el segmento
+
+        self.shake_cuerpo.clear()
+
+        # se reinicia el delay
+        self._delay = 0.1
+        # se reinicia el score
+        if self._score > self._high_score:
+            self._high_score = self._score
+        self._score = 0
+        self._print_score()
 
 
 juego_snake = SnakeGame()
